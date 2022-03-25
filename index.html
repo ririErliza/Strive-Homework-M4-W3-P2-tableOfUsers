@@ -50,8 +50,8 @@
              
 
               
-            <section>
-                <div class="container">
+        <section>
+            <div class="container">
 
                     <!-- search area -->
             <nav class="navbar navbar-expand-lg pb-3">
@@ -59,9 +59,9 @@
                 <ul class="navbar-nav">
             
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <button class="nav-link dropdown-toggle btn btn-outline-dark" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                       Choose one
-                    </a>
+                    </button>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <div class="dropdown-item">
                           Email
@@ -78,18 +78,24 @@
                 </li>
             
                 </ul>
+
+          
                             
-                    <form class="form-inline">
+                    <form class="form-inline input-group w-25 ml-2">
+                          <input type="text" class="form-control" placeholder="Serach" aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="input-group-text btn" id="basic-addon2" type="submit">Search</button>
+                         </div>
                                 
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                        <!-- <input class="form-control ml-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary py-1" type="submit">Search</button> -->
                     </form>
         
                 </nav>
 
                  <!-- table -->
 
-                    <table id="myTable" class="table table-bordered text-center table-striped">
+                    <table id="myTable" class="table table-hover table-bordered table-dark">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
