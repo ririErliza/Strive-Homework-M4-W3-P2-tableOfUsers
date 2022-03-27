@@ -123,8 +123,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        List of names : <button class="btn btn-outline-primary"> Click here </button>
+                        List of names : <button class="btn btn-outline-primary" onclick="renderName()"> Click here </button>
                         <div id="listNames">
+
+                            <!-- <ol>
+                                <li></li>
+                            </ol> -->
 
                         </div>
 
@@ -154,6 +158,7 @@
         window.onload = async () =>{
             await getData();
             await renderTable();
+            
         }
 
       

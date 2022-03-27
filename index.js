@@ -15,19 +15,34 @@ getData()
 
 
 
-// data table
+// data to table
 async function renderTable() {
     let dataTable = await getData()
     let TableBody = document.querySelector("tbody")
 
     dataTable.forEach(user => TableBody.innerHTML += 
-        `<tr>
+                `<tr>
                     <th scope="row">${user.id}  </th>
                     <td> ${user.name}  </td>
                     <td> ${user.username}  </td>
                     <td> ${user.email}  </td>
                     <td> ${user.address.street}, ${user.address.suite}, ${user.address.city} (${user.address.zipcode}  </td>
                 </tr>`
+        
+    );
+}
+
+// data to table
+async function renderName() {
+    let dataTable = await getData()
+    let namesWrapper = document.querySelector("#listNames")
+
+    dataTable.forEach(user => namesWrapper.innerHTML += 
+                `
+                <ul>
+                <li> ${user.id}. ${user.name} </li>
+                </ul>
+                `
         
     );
 }
