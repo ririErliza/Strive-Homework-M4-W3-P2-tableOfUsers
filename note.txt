@@ -14,20 +14,39 @@ getData()
 .catch(err => console.log('rejected:', err.message));
 
 
+// fetch the data
+async function getData() {
+    await fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log('resolved:',data);
 
-// data table
-async function renderTable() {
-    let dataTable = await getData()
-    let TableBody = document.querySelector("tbody")
 
-    dataTable.forEach(user => TableBody.innerHTML += 
-        `<tr>
+            const tableBody = document.querySelector("tbody");
+            tableBody.innerHTML = ""
+            data.forEach((user) => {
+                tableBody.innerHTML += `
+                <tr>
                     <th scope="row">${user.id}  </th>
                     <td> ${user.name}  </td>
                     <td> ${user.username}  </td>
                     <td> ${user.email}  </td>
                     <td> ${user.address.street}, ${user.address.suite}, ${user.address.city} (${user.address.zipcode}  </td>
                 </tr>`
-        
-    );
+                ;
+            })
+            
+        })
+        .catch((error) => {
+            console.error('rejected:', error);
+        });
 }
+
+getData();
+
+

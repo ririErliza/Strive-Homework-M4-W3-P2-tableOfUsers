@@ -106,14 +106,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <!-- <tr>
                             <th scope="row">  </th>
                             <td>   </td>
                             <td>   </td>
                             <td>   </td>
                             <td>   </td>
                         </tr>
-                        
+                         -->
                         </tbody>
                     </table>
                 </div>
@@ -124,12 +124,18 @@
                 <div class="row">
                     <div class="col-lg-6">
                         List of names : <button class="btn btn-outline-primary"> Click here </button>
+                        <div id="listNames">
+
+                        </div>
 
                     </div>
 
                     <div class="col-lg-6">
 
                         List of address : <button class="btn btn-outline-primary"> Click here </button>
+                        <div id="listAddress">
+
+                        </div>
                         
                     </div>
                 </div>
@@ -145,7 +151,10 @@
     <script>
        
 
-        
+        window.onload = async () =>{
+            await getData();
+            await renderTable();
+        }
 
       
 
@@ -157,5 +166,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
+<script src="index.js"></script>
 </body>
 </html>
