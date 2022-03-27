@@ -32,7 +32,7 @@ async function renderTable() {
     );
 }
 
-// data to table
+// data to list of names
 async function renderName() {
     let dataTable = await getData()
     let namesWrapper = document.querySelector("#listNames")
@@ -43,6 +43,25 @@ async function renderName() {
                 <li> ${user.id}. ${user.name} </li>
                 </ul>
                 `
+        
+    );
+}
+
+// data to list of address
+async function renderAddress() {
+    let dataTable = await getData()
+    let addressWrapper = document.querySelector("#listAddress")
+
+    dataTable.forEach(user => addressWrapper.innerHTML+= 
+
+                `
+                <ul>
+                <li> ${user.id}. ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode} </li>
+                </ul>
+                `
+                
+            
+                
         
     );
 }
