@@ -33,138 +33,104 @@
             </div>
         </div>
     </header>
+   
+    <section class="jumbotron text-center">
 
-
-      
-      
-          
-            <section id="table-users" class="jumbotron text-center">
-
-                  <h1>Users Information</h1>
+        <h1>Users Information</h1>
                  
-            </section>
+    </section>
 
-              
+                     
+    <section>
+        <div class="container">
 
-
-             
-
-              
-        <section>
-            <div class="container">
-
-                    <!-- search area -->
+        <!-- search area -->
             <nav class="navbar navbar-expand-lg pb-3">
 
                 <ul class="navbar-nav">
-            
-                <li class="nav-item dropdown">
-                    <button class="nav-link dropdown-toggle btn btn-outline-dark" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                      Choose one
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <div class="dropdown-item">
-                          Email
-                        </div>
-                        <div class="dropdown-item">
-                          Username
-                        </div>
-                        <div class="dropdown-item">
-                          Name
-                        </div>
-            
-                    </div>
-                        
-                </li>
-            
+                    <li>
+                        <select id="options" onchange="selectedOption()" class="btn btn-primary">
+                            <option value="Email" >
+                            Email
+                            </option>
+                            <option value="Username" >
+                            Username
+                            </option>
+                            <option value="Name">
+                            Name
+                            </option>
+                        </select> 
+                    </li>
                 </ul>
 
           
-                            
-                    <form class="form-inline input-group w-25 ml-2">
-                          <input type="text" class="form-control" placeholder="Serach" aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="input-group-text btn" id="basic-addon2" type="submit">Search</button>
-                         </div>
-                                
-                        <!-- <input class="form-control ml-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-primary py-1" type="submit">Search</button> -->
-                    </form>
+                <form class="form-inline input-group w-25 ml-2">
+                    <input type="text" class="form-control" placeholder="Serach" aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="input-group-text btn" id="basic-addon2" type="submit">Search</button>
+                    </div>
+                </form>
         
-                </nav>
+            </nav>
 
-                 <!-- table -->
+        <!-- table -->
 
-                    <table id="myTable" class="table table-hover table-bordered table-dark">
+            <table id="myTable" class="table table-hover table-bordered table-dark">
                         <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Username</th>
-                            <th scope="col">E-mail</th>
-                            <th scope="col">Address</th>
-                        </tr>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Address</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <!-- <tr>
-                            <th scope="row">  </th>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
-                        </tr>
-                         -->
+                            <!-- <tr>
+                                <th scope="row">  </th>
+                                <td>   </td>
+                                <td>   </td>
+                                <td>   </td>
+                                <td>   </td>
+                            </tr>
+                            -->
                         </tbody>
-                    </table>
-                </div>
+            </table>
+              
              
-            </section>
+    </section>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        List of names : <button class="btn btn-outline-primary" onclick="renderName()"> Click here </button>
-                        <div id="listNames">
-
-                            <!-- <ul>
-                                <li></li>
-                            </ul> -->
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-6">
-
-                        List of address : <button class="btn btn-outline-primary" onclick="renderAddress()"> Click here </button>
-                        <div id="listAddress">
-
-                        </div>
-                        
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                List of names : <button class="btn btn-outline-primary" onclick="renderName()"> Click here </button>
+                <div id="listNames">
+                    <!-- <ul>
+                    <li></li>
+                    </ul> -->
                 </div>
             </div>
 
+            <div class="col-lg-6">
+
+                List of address : <button class="btn btn-outline-primary" onclick="renderAddress()"> Click here </button>
+                <div id="listAddress">
+
+                </div>
+                        
+            </div>
+        </div>
+    </div>
+
         
 
 
-
-
-   
-    
     <script>
-       
-
         window.onload = async () =>{
             await getData();
             await renderTable();
             
-        }
-
-      
-
-        
-        
+        }  
     </script>
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

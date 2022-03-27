@@ -65,3 +65,9 @@ async function renderAddress() {
         
     );
 }
+
+// selected option (got this from w3s)
+
+function selectedOption() {
+    select = document.forms[0].options.value;
+  }
