@@ -22,34 +22,32 @@
 
 <body>
 
-    
-
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                
+                <div class="col-md-12 mb-4">
                     <img src="banner-with-group-smiling-people-standing-together-line-beige-portrait-happy-crowd-persons_90220-143.webp" alt="image" class="img-fluid">
                 </div>
+                <div class="col-lg-12 text-center py-3">
+                    <h1>Users Information</h1>
+               </div>
             </div>
         </div>
     </header>
    
-    <section class="jumbotron text-center">
-
-        <h1>Users Information</h1>
-                 
-    </section>
+  
 
                      
     <section>
         <div class="container">
 
         <!-- search area -->
-            <nav class="navbar navbar-expand-lg pb-3">
+            <nav class="navbar navbar-expand-lg">
 
                 <ul class="navbar-nav">
                     <li>
-                        <select id="options" onchange="selectedOption()" class="btn btn-primary">
+                        <select id="options" class="btn btn-outline-primary">
                             <option value="Email" >
                             Email
                             </option>
@@ -64,12 +62,12 @@
                 </ul>
 
           
-                <form class="form-inline input-group w-25 ml-2">
-                    <input type="text" class="form-control" placeholder="Serach" aria-label="Search" aria-describedby="basic-addon2">
+                <div class="form-inline input-group w-25 ml-2">
+                    <input id="input-text" type="text" class="form-control" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
-                        <button class="input-group-text btn" id="basic-addon2" type="submit">Search</button>
+                        <button class="btn btn-primary" onclick="searchTable()" value="Search">Search</button>
                     </div>
-                </form>
+                </div>
         
             </nav>
 
@@ -100,7 +98,7 @@
              
     </section>
 
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-lg-6">
                 List of names : <button class="btn btn-outline-primary" onclick="renderName()"> Click here </button>

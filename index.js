@@ -56,18 +56,15 @@ async function renderAddress() {
 
                 `
                 <ul>
-                <li> ${user.id}. ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode} </li>
+                <li> ${user.id}. ${user.address.street}, ${user.address.suite}, ${user.address.city}, (${user.address.zipcode}) </li>
                 </ul>
                 `
-                
-            
-                
-        
+              
     );
 }
 
-// selected option (got this from w3s)
 
-function selectedOption() {
-    select = document.forms[0].options.value;
-  }
+// search function
+async function searchTable(){
+    console.log("is this working?");
+} 

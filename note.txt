@@ -50,3 +50,101 @@ async function getData() {
 getData();
 
 
+// selected option (got this from w3s)
+
+function selectedOption() {
+    select = document.forms[0].options.value;
+  }
+
+
+
+// search function
+1. when one of the options chosen (either email, name, or surname) this will filter the search
+2. if user type certain word, after search button is clicked function searchFunction() will be triggered
+3. the result will be shown on the table (highlighted with color yellow? or whatever style)
+
+so:
+if value = email then search from email data (should we make this into array?)
+if value = name then search from name data
+if value = surname then search from surname data
+
+should we filter it first from the whole data we got?
+
+
+async function searchTable(query) {
+    let dataTable = await getData()
+    let TableBody = document.querySelector("tbody")
+
+    let textValue = document.getElementById("text-input").value
+    console.log(textValue)
+    if(option.value === "Email" && textValue === ""){
+
+    } else if (option.value === "Username" && textValue === ""){
+
+    } else if (option.value === "Username" && textValue === ""){
+
+    } else {
+      query = textValue
+    }
+
+    dataTable.forEach(user => TableBody.innerHTML += 
+                `<tr>
+                    <th scope="row">${user.id}  </th>
+                    <td> ${user.name}  </td>
+                    <td> ${user.username}  </td>
+                    <td> ${user.email}  </td>
+                    <td> ${user.address.street}, ${user.address.suite}, ${user.address.city} (${user.address.zipcode}  </td>
+                </tr>`
+        
+    );
+}  // didnt work
+
+
+// search function
+async function searchTable() {
+    let dataTable = await getData()
+    let textValue = document.querySelector('#text-input').value.toLocaleLowerCase();
+    let options = document.querySelector('#options').value;
+
+
+        if (options === "name") {
+        let results = dataTable.filter(user => {
+          let name = user.name
+          return name.toLowerCase().includes(textValue.toLowerCase())
+        })
+        
+      
+renderTable(results)
+      
+      results.forEach((result) => {
+        table.innerHTML += userDisplay(result)
+      })
+      
+      } else if (options === "username") {
+          let results = dataTable.filter(user => {    
+            let username = user.username  
+          return username.toLowerCase().includes(textValue.toLowerCase())
+        })
+
+renderTable(results)
+      results.forEach((result) => {
+            table.innerHTML += userDisplay(result)
+          })
+      
+      } else if (options === "email") {
+        let results = dataTable.filter(user => {
+          let email = user.email      
+            return email.toLowerCase().includes(textValue.toLowerCase())  
+          })
+
+renderTable(results)
+      
+      results.forEach((result) => {
+            table.innerHTML += userDisplay(result)
+      })
+      
+      }
+      
+      }  // didnt work
+
+
